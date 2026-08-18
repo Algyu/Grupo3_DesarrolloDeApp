@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Formulario de registro con validación HTML5">
+
+    <title>Formulario de Registro</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        main {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .formulario {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #243447;
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: 2px solid #243447;
+        }
+
+        .ayuda {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border: 2px solid #c0392b;
+        }
+
+        input:valid:not(:placeholder-shown) {
+            border: 2px solid #27ae60;
+        }
+
+        /* Teléfono */
+
+        .telefono-contenedor {
+            display: flex;
+            gap: 8px;
+        }
+
+        .codigo-pais {
+            width: 70px;
+            background-color: #eeeeee;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .telefono-contenedor input {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background-color: #243447;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: #17212b;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="formulario">
+
+            <h1>Crear una cuenta</h1>
+
+            <form action="#" method="post">
+
+                <!-- NOMBRE COMPLETO -->
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ejemplo: Antony Mijail"
+                        required
+                        minlength="3"
+                        maxlength="50"
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                        title="El nombre debe contener solamente letras y espacios.">
+
+                    <small class="ayuda">
+                        Ingresa tu nombre completo. Solo se permiten letras.
+                    </small>
+
+                </div>
+
+
+                <!-- CORREO -->
+
+                <div class="campo">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                        title="Ingresa un correo electrónico válido.">
+
+                    <small class="ayuda">
+                        Ingresa un correo electrónico válido.
+                    </small>
+
+                </div>
+
+
+                <!-- USUARIO -->
+
+                <div class="campo">
+
+                    <label for="usuario">
+                        Nombre de usuario
+                    </label>
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Ejemplo: antony123"
+                        required
+                        minlength="4"
+                        maxlength="20"
+                        pattern="[A-Za-z0-9]+"
+                        title="El usuario debe tener entre 4 y 20 caracteres y solo puede contener letras y números.">
+
+                    <small class="ayuda">
+                        Usa entre 4 y 20 caracteres, solo letras y números.
+                    </small>
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="campo">
+
+                    <label for="contrasena">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                        minlength="8"
+                        maxlength="30"
+                        title="La contraseña debe tener entre 8 y 30 caracteres.">
+
+                    <small class="ayuda">
+                        La contraseña debe tener entre 8 y 30 caracteres.
+                    </small>
+
+                </div>
+
+
+                <!-- FECHA DE NACIMIENTO -->
+
+                <div class="campo">
+
+                    <label for="fecha">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        name="fecha"
+                        min="1900-01-01"
+                        max="2026-08-18"
+                        required
+                        title="Ingresa una fecha de nacimiento válida.">
+
+                    <small class="ayuda">
+                        Selecciona una fecha válida entre 1900 y la fecha actual.
+                    </small>
+
+                </div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="campo">
+
+                    <label for="telefono">
+                        Número de teléfono
+                    </label>
+
+                    <div class="telefono-contenedor">
+
+                        <input
+                            type="text"
+                            value="+51"
+                            class="codigo-pais"
+                            readonly
+                            aria-label="Código de país">
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="969385011"
+                            required
+                            minlength="9"
+                            maxlength="9"
+                            pattern="9[0-9]{8}"
+                            inputmode="numeric"
+                            title="El número debe tener exactamente 9 dígitos y comenzar con 9.">
+
+                    </div>
+
+                    <small class="ayuda">
+                        Ingresa 9 dígitos y debe comenzar con 9. Ejemplo: 969385011.
+                    </small>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+
+                <button type="submit">
+                    Registrarse
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
