@@ -1,27 +1,28 @@
 body {
     background-color: #f2f2f2;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 20px;
+    color: #333333;
 }
 
 header {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
 }
 
 h1 {
-    color: #333333;
+    color: #222222;
+    animation: aparecer 1s ease-in-out;
 }
 
 h2 {
-    color: #555555;
+    color: #444444;
 }
 
 h3 {
-    color: #666666;
+    color: #555555;
 }
 
-/* FLEXBOX PARA EL MENÚ */
 nav {
     margin-top: 15px;
     display: flex;
@@ -29,59 +30,70 @@ nav {
     flex-wrap: wrap;
 }
 
-a {
-    color: #336699;
-    margin-right: 0;
+nav a {
+    color: #174f7c;
+    text-decoration: underline;
+    padding: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #8a3d00;
+    transform: translateY(-3px);
+}
+
+nav a:focus {
+    outline: 3px solid #cc6600;
+    outline-offset: 3px;
 }
 
 main {
     margin-top: 20px;
 }
 
-/* GRID PARA ORGANIZAR EL CONTENIDO */
 section {
-    background-color: white;
-    padding: 15px;
+    background-color: #ffffff;
+    padding: 18px;
     margin-bottom: 15px;
+    border-radius: 6px;
 }
 
 .lugar {
-    border: 1px solid #cccccc;
+    border: 1px solid #999999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lugar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 footer {
-    background-color: #333333;
-    padding: 10px;
+    background-color: #222222;
+    padding: 15px;
+    margin-top: 20px;
 }
 
 footer p {
-    color: white;
+    color: #ffffff;
+    font-size: 15px;
 }
-
-
-/* =====================================
-   DISEÑO PARA LA PÁGINA DE LUGARES
-   ===================================== */
 
 .destinos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
-
-
-/* =====================================
-   TABLET
-   ===================================== */
 
 @media screen and (max-width: 900px) {
 
@@ -100,13 +112,7 @@ footer p {
     .destinos {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
-
-
-/* =====================================
-   CELULAR
-   ===================================== */
 
 @media screen and (max-width: 600px) {
 
@@ -130,49 +136,32 @@ footer p {
         font-size: 18px;
     }
 
-    /* El menú se coloca verticalmente */
     nav {
         flex-direction: column;
         gap: 10px;
     }
 
-    /* Los destinos pasan a una sola columna */
+    nav a {
+        display: block;
+        width: fit-content;
+    }
+
     .destinos {
         grid-template-columns: 1fr;
     }
 
     section {
-        padding: 12px;
+        padding: 15px;
     }
 
     p {
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.7;
     }
 
     footer {
         text-align: center;
     }
-}
-nav a {
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-    color: #cc6633;
-    transform: translateY(-3px);
-}
-
-.lugar {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.lugar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-}
-
-h1 {
-    animation: aparecer 1s ease-in-out;
 }
 
 @keyframes aparecer {
