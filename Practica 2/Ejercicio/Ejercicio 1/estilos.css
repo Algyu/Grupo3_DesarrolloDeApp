@@ -153,3 +153,36 @@ footer p {
         text-align: center;
     }
 }
+nav a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #cc6633;
+    transform: translateY(-3px);
+}
+
+.lugar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lugar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    animation: aparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
