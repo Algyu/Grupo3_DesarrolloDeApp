@@ -1,0 +1,259 @@
+body {
+background-color: #f2f2f2;
+font-family: Arial, sans-serif;
+margin: 20px;
+color: #333333;
+}
+
+header {
+background-color: #ffffff;
+padding: 20px;
+border-radius: 6px;
+}
+
+h1 {
+color: #222222;
+animation: aparecer 1s ease-in-out;
+}
+
+h2 {
+color: #444444;
+}
+
+h3 {
+color: #555555;
+}
+
+nav {
+margin-top: 15px;
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+nav a {
+color: #174f7c;
+text-decoration: underline;
+padding: 8px;
+position: relative;
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+color: #8a3d00;
+transform: translateY(-3px);
+}
+
+nav a:focus {
+outline: 3px solid #cc6600;
+outline-offset: 3px;
+}
+
+nav a::after {
+content: "";
+position: absolute;
+left: 8px;
+right: 8px;
+bottom: 2px;
+height: 2px;
+background-color: #cc6600;
+transform: scaleX(0);
+transition: transform 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+transform: scaleX(1);
+}
+
+main {
+margin-top: 20px;
+}
+
+section {
+background-color: #ffffff;
+padding: 18px;
+margin-bottom: 15px;
+border-radius: 6px;
+}
+
+section:first-child {
+border-top: 4px solid #336699;
+}
+
+section:nth-child(even) {
+background-color: #f9f9f9;
+}
+
+section p:first-of-type::first-letter {
+font-size: 28px;
+font-weight: bold;
+color: #336699;
+}
+
+.lugar {
+border: 1px solid #999999;
+position: relative;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lugar:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lugar::before {
+content: "Destino";
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 12px;
+font-weight: bold;
+color: #336699;
+background-color: #eaf2f8;
+padding: 4px 7px;
+border-radius: 4px;
+}
+
+.lugar h2::before {
+content: "✦ ";
+color: #cc6600;
+}
+
+.lugar p strong {
+color: #174f7c;
+}
+
+.lugar p:nth-of-type(2) {
+border-left: 3px solid #336699;
+padding-left: 10px;
+}
+
+ul li:nth-child(odd) {
+background-color: #f5f5f5;
+padding: 5px;
+}
+
+ul li::marker {
+color: #336699;
+}
+
+p {
+font-size: 16px;
+line-height: 1.7;
+}
+
+li {
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+footer {
+background-color: #222222;
+padding: 15px;
+margin-top: 20px;
+}
+
+footer p {
+color: #ffffff;
+font-size: 15px;
+}
+
+footer p::before {
+content: "✈ ";
+}
+
+.destinos {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+}
+
+.destinos .lugar:nth-child(3n) {
+border-color: #336699;
+}
+
+@media screen and (max-width: 900px) {
+body {
+margin: 15px;
+}
+
+header {
+padding: 18px;
+}
+
+h1 {
+font-size: 28px;
+}
+
+.destinos {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media screen and (max-width: 600px) {
+body {
+margin: 10px;
+}
+
+header {
+padding: 15px;
+}
+
+h1 {
+font-size: 23px;
+}
+
+h2 {
+font-size: 20px;
+}
+
+h3 {
+font-size: 18px;
+}
+
+nav {
+flex-direction: column;
+gap: 10px;
+}
+
+nav a {
+display: block;
+width: fit-content;
+}
+
+.destinos {
+grid-template-columns: 1fr;
+}
+
+section {
+padding: 15px;
+}
+
+p {
+font-size: 16px;
+line-height: 1.7;
+}
+
+.lugar::before {
+position: static;
+display: inline-block;
+margin-bottom: 8px;
+}
+
+footer {
+text-align: center;
+}
+}
+
+@keyframes aparecer {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
