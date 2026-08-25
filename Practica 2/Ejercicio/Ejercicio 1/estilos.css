@@ -21,19 +21,24 @@ h3 {
     color: #666666;
 }
 
+/* FLEXBOX PARA EL MENÚ */
 nav {
     margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 a {
     color: #336699;
-    margin-right: 15px;
+    margin-right: 0;
 }
 
 main {
     margin-top: 20px;
 }
 
+/* GRID PARA ORGANIZAR EL CONTENIDO */
 section {
     background-color: white;
     padding: 15px;
@@ -46,6 +51,7 @@ section {
 
 p {
     font-size: 16px;
+    line-height: 1.6;
 }
 
 li {
@@ -59,4 +65,91 @@ footer {
 
 footer p {
     color: white;
+}
+
+
+/* =====================================
+   DISEÑO PARA LA PÁGINA DE LUGARES
+   ===================================== */
+
+.destinos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+/* =====================================
+   TABLET
+   ===================================== */
+
+@media screen and (max-width: 900px) {
+
+    body {
+        margin: 15px;
+    }
+
+    header {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .destinos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================
+   CELULAR
+   ===================================== */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        margin: 10px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* El menú se coloca verticalmente */
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Los destinos pasan a una sola columna */
+    .destinos {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 12px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    footer {
+        text-align: center;
+    }
 }
