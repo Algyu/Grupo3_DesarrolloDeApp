@@ -1,0 +1,51 @@
+// =====================================================
+// main.scss
+// Archivo principal - importa todos los parciales
+// =====================================================
+
+// Orden importante: primero variables y funciones,
+// luego mixins, después los módulos que los usan
+@import "variables";
+@import "funciones";
+@import "mixins";
+@import "grilla";
+@import "botones";
+
+// Estilos base del documento
+body {
+  font-family: $fuente-principal;
+  font-size: px-a-rem(16px);
+  color: $color-texto;
+  background-color: $color-fondo-suave;
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+  margin-bottom: px-a-rem($espacio-md);
+  font-weight: 600;
+}
+
+h1 { font-size: px-a-rem(28px); }
+h2 { font-size: px-a-rem(24px); }
+h3 { font-size: px-a-rem(20px); }
+
+p {
+  margin-top: 0;
+  margin-bottom: px-a-rem($espacio-md);
+}
+
+// Ejemplo de uso del mixin tema-componente
+.caja-demo {
+  @include tema-componente(#0d6efd);
+  padding: px-a-rem($espacio-lg);
+  border-radius: $radio-lg;
+  margin-bottom: px-a-rem($espacio-md);
+}
+
+.caja-clara {
+  @include tema-componente(#ffc107); // color claro → texto oscuro
+  padding: px-a-rem($espacio-lg);
+  border-radius: $radio-lg;
+}

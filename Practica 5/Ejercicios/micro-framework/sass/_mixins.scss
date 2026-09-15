@@ -1,0 +1,42 @@
+// =====================================================
+// _mixins.scss
+// Mixins reutilizables
+// =====================================================
+
+// Mixin que aplica color de fondo y decide automáticamente
+// el color del texto según la luminosidad (accesibilidad)
+@mixin tema-componente($color-fondo) {
+  background-color: $color-fondo;
+
+  // Si el color es oscuro (lightness < 50%), texto blanco
+  // Si es claro, texto negro
+  @if lightness($color-fondo) < 50% {
+    color: #ffffff;
+  } @else {
+    color: #212529;
+  }
+}
+
+// Mixin simple para centrar con flex
+@mixin flex-centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Mixin para botones base (se usa junto con el mapa)
+@mixin boton-base {
+  display: inline-block;
+  padding: px-a-rem(10px) px-a-rem(18px);
+  font-size: px-a-rem(14px);
+  font-weight: 600;
+  border: none;
+  border-radius: $radio-md;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

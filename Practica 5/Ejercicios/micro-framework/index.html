@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-Framework CSS - Demo</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container p-3">
+    <h1>Micro-Framework propio</h1>
+    <p>Este es un ejemplo de uso del sistema de diseño creado con Sass modular.</p>
+
+    <h2 class="mt-3">Botones generados automáticamente</h2>
+    <p>
+      <button class="btn-primario">Primario</button>
+      <button class="btn-secundario">Secundario</button>
+      <button class="btn-acento">Acento</button>
+      <button class="btn-peligro">Peligro</button>
+      <button class="btn-advertencia">Advertencia</button>
+      <button class="btn-outline">Outline</button>
+    </p>
+
+    <h2 class="mt-3">Uso del mixin tema-componente</h2>
+    <div class="caja-demo">
+      Fondo oscuro → texto blanco (calculado con lightness)
+    </div>
+    <div class="caja-clara">
+      Fondo claro (advertencia) → texto oscuro automático
+    </div>
+
+    <h2 class="mt-3">Grilla simple</h2>
+    <div class="row">
+      <div class="col-3">
+        <div class="p-2" style="background:#e9ecef; border-radius:6px;">col-3</div>
+      </div>
+      <div class="col-3">
+        <div class="p-2" style="background:#e9ecef; border-radius:6px;">col-3</div>
+      </div>
+      <div class="col-3">
+        <div class="p-2" style="background:#e9ecef; border-radius:6px;">col-3</div>
+      </div>
+      <div class="col-3">
+        <div class="p-2" style="background:#e9ecef; border-radius:6px;">col-3</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

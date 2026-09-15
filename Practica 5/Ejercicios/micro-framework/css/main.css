@@ -1,0 +1,264 @@
+.container {
+  width: 100%;
+  max-width: 71.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.col-4 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.btn-primario {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-primario:active {
+  transform: scale(0.97);
+}
+.btn-primario {
+  background-color: #0d6efd;
+  color: #212529;
+}
+.btn-primario:hover {
+  background-color: rgb(0.7238829958%, 35.8322082932%, 87.5898424944%);
+  color: #ffffff;
+}
+
+.btn-secundario {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-secundario:active {
+  transform: scale(0.97);
+}
+.btn-secundario {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+.btn-secundario:hover {
+  background-color: rgb(34.9366321636%, 37.8480181772%, 40.435916856%);
+  color: #ffffff;
+}
+
+.btn-acento {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-acento:active {
+  transform: scale(0.97);
+}
+.btn-acento {
+  background-color: #6610f2;
+  color: #212529;
+}
+.btn-acento:hover {
+  background-color: rgb(33.4621848739%, 4.3940242764%, 80.7824463119%);
+  color: #ffffff;
+}
+
+.btn-peligro {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-peligro:active {
+  transform: scale(0.97);
+}
+.btn-peligro {
+  background-color: #dc3545;
+  color: #212529;
+}
+.btn-peligro:hover {
+  background-color: rgb(77.6113179449%, 13.4475055845%, 19.5949367089%);
+  color: #ffffff;
+}
+
+.btn-advertencia {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-advertencia:active {
+  transform: scale(0.97);
+}
+.btn-advertencia {
+  background-color: #ffc107;
+  color: #212529;
+}
+.btn-advertencia:hover {
+  background-color: rgb(86.7450980392%, 65.0588235294%, 0%);
+  color: #ffffff;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-outline:active {
+  transform: scale(0.97);
+}
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+}
+.btn-outline:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.caja-demo {
+  background-color: #0d6efd;
+  color: #212529;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.caja-clara {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 1.5rem;
+  border-radius: 12px;
+}

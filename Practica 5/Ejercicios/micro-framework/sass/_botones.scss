@@ -1,0 +1,38 @@
+// =====================================================
+// _botones.scss
+// Generación automática de clases de botones
+// =====================================================
+
+// Genera .btn-primario, .btn-secundario, etc.
+// El hover se calcula con darken() o lighten()
+@each $nombre, $color in $tema-colores {
+  .btn-#{$nombre} {
+    @include boton-base;
+    @include tema-componente($color);
+
+    // Hover: si el color es oscuro oscurecemos un poco más,
+    // si es claro (como advertencia) lo oscurecemos también para contraste
+    &:hover {
+      background-color: darken($color, 8%);
+      // Mantiene el color de texto según la nueva luminosidad
+      @if lightness(darken($color, 8%)) < 50% {
+        color: #ffffff;
+      } @else {
+        color: #212529;
+      }
+    }
+  }
+}
+
+// Botón outline de ejemplo (opcional pero útil)
+.btn-outline {
+  @include boton-base;
+  background-color: transparent;
+  border: 2px solid map-get($tema-colores, "primario");
+  color: map-get($tema-colores, "primario");
+
+  &:hover {
+    background-color: map-get($tema-colores, "primario");
+    color: #ffffff;
+  }
+}

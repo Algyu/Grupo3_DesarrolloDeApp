@@ -1,0 +1,39 @@
+// =====================================================
+// _variables.scss
+// Variables globales del micro-framework
+// =====================================================
+
+// Tamaño base para conversiones (usado en px-a-rem)
+$base-font-size: 16px;
+
+// Tipografía
+$fuente-principal: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$fuente-mono: 'Courier New', monospace;
+
+// Espaciados base (se convierten con la función)
+$espacio-xs: 4px;
+$espacio-sm: 8px;
+$espacio-md: 16px;
+$espacio-lg: 24px;
+$espacio-xl: 32px;
+
+// Bordes y radios
+$radio-sm: 4px;
+$radio-md: 6px;
+$radio-lg: 12px;
+
+// Mapa de colores corporativos (mínimo 5 como pide la práctica)
+$tema-colores: (
+  "primario":    #0d6efd,
+  "secundario":  #6c757d,
+  "acento":      #6610f2,
+  "peligro":     #dc3545,
+  "advertencia": #ffc107
+);
+
+// Colores de texto y fondos neutros
+$color-texto: #212529;
+$color-texto-claro: #f8f9fa;
+$color-fondo: #ffffff;
+$color-fondo-suave: #f8f9fa;
+$color-borde: #dee2e6;

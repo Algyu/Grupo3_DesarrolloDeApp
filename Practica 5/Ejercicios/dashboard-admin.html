@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Sistema de Gestión</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos mínimos para el sidebar fijo en desktop */
+        body {
+            min-height: 100vh;
+        }
+        .sidebar-desktop {
+            min-height: calc(100vh - 56px);
+            background-color: #212529;
+        }
+        .sidebar-desktop .nav-link {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .sidebar-desktop .nav-link:hover,
+        .sidebar-desktop .nav-link.active {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .main-content {
+            min-height: calc(100vh - 56px);
+        }
+        /* Ajuste para que el contenido no quede debajo del navbar fijo */
+        .content-wrapper {
+            margin-top: 56px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR SUPERIOR FIJA -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <!-- Botón para abrir sidebar en móviles (offcanvas) -->
+            <button class="btn btn-outline-light d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <a class="navbar-brand fw-bold" href="#">MiSistema Admin</a>
+            
+            <div class="d-flex align-items-center">
+                <span class="text-light me-3 d-none d-md-inline">Bienvenido, Admin</span>
+                <button class="btn btn-outline-light btn-sm" type="button">Salir</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR OFFCANVAS (solo móvil / tablet) -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Menú</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Seguridad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Configuración</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container-fluid content-wrapper">
+        <div class="row">
+            <!-- SIDEBAR DESKTOP (visible solo en lg+) -->
+            <div class="col-lg-2 d-none d-lg-block sidebar-desktop p-0">
+                <div class="p-3">
+                    <h6 class="text-uppercase text-secondary mb-3">Navegación</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reportes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Seguridad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Configuración</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="col-lg-10 main-content bg-light p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0">Panel de Control</h2>
+                    <!-- Botón que abre el modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNuevoRegistro">
+                        Nuevo Registro
+                    </button>
+                </div>
+
+                <!-- SECCIÓN DE MÉTRICAS / KPIs -->
+                <div class="row g-3 mb-4">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100 border-0">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Usuarios Activos</h6>
+                                <h3 class="card-title mb-0">1,248</h3>
+                                <small class="text-success">+12% esta semana</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100 border-0">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Alertas de Seguridad</h6>
+                                <h3 class="card-title mb-0 text-danger">7</h3>
+                                <small class="text-danger">3 críticas</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100 border-0">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Carga del Servidor</h6>
+                                <h3 class="card-title mb-0">64%</h3>
+                                <small class="text-warning">Moderada</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100 border-0">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Sesiones Hoy</h6>
+                                <h3 class="card-title mb-0">892</h3>
+                                <small class="text-success">+5% vs ayer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABLA DE EVENTOS -->
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Últimos Eventos del Sistema</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Evento</th>
+                                        <th scope="col">Usuario</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Prioridad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EVT-1024</td>
+                                        <td>Intento de acceso fallido</td>
+                                        <td>j.perez</td>
+                                        <td>15/09/2026 09:12</td>
+                                        <td><span class="badge bg-danger">Crítico</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EVT-1023</td>
+                                        <td>Actualización de permisos</td>
+                                        <td>a.rodriguez</td>
+                                        <td>15/09/2026 08:45</td>
+                                        <td><span class="badge bg-warning text-dark">Advertencia</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EVT-1022</td>
+                                        <td>Backup completado</td>
+                                        <td>sistema</td>
+                                        <td>15/09/2026 03:00</td>
+                                        <td><span class="badge bg-success">Normal</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EVT-1021</td>
+                                        <td>Nuevo usuario registrado</td>
+                                        <td>m.lopez</td>
+                                        <td>14/09/2026 18:22</td>
+                                        <td><span class="badge bg-success">Normal</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EVT-1020</td>
+                                        <td>Uso de CPU elevado</td>
+                                        <td>monitor</td>
+                                        <td>14/09/2026 16:10</td>
+                                        <td><span class="badge bg-warning text-dark">Advertencia</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EVT-1019</td>
+                                        <td>Fallo en servicio de correo</td>
+                                        <td>sistema</td>
+                                        <td>14/09/2026 11:05</td>
+                                        <td><span class="badge bg-danger">Crítico</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL NUEVO REGISTRO -->
+    <div class="modal fade" id="modalNuevoRegistro" tabindex="-1" aria-labelledby="modalNuevoRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNuevoRegistroLabel">Nuevo Registro de Evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombreEvento" class="form-label">Nombre del evento</label>
+                            <input type="text" class="form-control" id="nombreEvento" placeholder="Ej: Actualización de seguridad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoEvento" class="form-label">Tipo</label>
+                            <select class="form-select" id="tipoEvento">
+                                <option selected disabled>Seleccione un tipo</option>
+                                <option value="seguridad">Seguridad</option>
+                                <option value="sistema">Sistema</option>
+                                <option value="usuario">Usuario</option>
+                                <option value="backup">Backup</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prioridad" class="form-label">Prioridad</label>
+                            <select class="form-select" id="prioridad">
+                                <option value="normal">Normal</option>
+                                <option value="advertencia">Advertencia</option>
+                                <option value="critico">Crítico</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Detalle breve del evento..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar Registro</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
